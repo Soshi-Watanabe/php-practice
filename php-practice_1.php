@@ -1,12 +1,25 @@
 <?php
 // Q1 変数と文字列
-
+<?php
+$name ='渡邊';
+echo '私の名前は「' .  $name . '」です。';
+?>
 
 // Q2 四則演算
+<?php
+$num = 5;
+$num *= 4;
+echo $num;
 
+$num /= 2;
+echo $num;
+?>
 
 // Q3 日付操作
-
+<?php
+$currentTimestamp = time();
+echo '現在時刻は' . date("Y年m月d日 H時i分s秒",$currentTimestamp) . 'です。';
+?>
 
 // Q4 条件分岐-1 if文
 
