@@ -81,7 +81,7 @@ foreach ((array) $mati as $kenntyou => $value) {
 <?php
 function hello($name)
 {
-  echo $name . 'さん、こんにちは';  
+  echo $name . 'さん、こんにちは';
 }
 hello('貴様');
 hello('わたし');
@@ -115,15 +115,15 @@ function evaluateGrade($rank)
 {
   switch($rank) {
     case 'A':
-      echo '合格です';
+      echo '合格です'."\r\n";
       break;
 
     case 'B' :
-      echo '合格です';
+      echo '合格です'."\r\n";
       break;
 
     case 'C' :
-      echo '合格ですが追加課題があります。';
+      echo '合格ですが追加課題があります。'."\r\n";
       break;
 
     case 'D' :
@@ -131,10 +131,10 @@ function evaluateGrade($rank)
       break;
 
     default :
-      echo '判定不明です。講師に問い合わせてください。';
+      echo '判定不明です。講師に問い合わせてください。'."\r\n";
       break;
   }
 }
-evaluateGrade('B')."\r\n";
-evaluateGrade('X')."\r\n";
+evaluateGrade('B');
+evaluateGrade('X');
 ?>
