@@ -70,14 +70,8 @@ $personalInfos = [
       'tel'  => '09055556666'
   ],
 ];
-foreach((array) $personalInfos as $people) {
-  if ($people['name'] == 'Aさん') {
-    echo '1番目の' . ($personalInfos[0]['name']) . 'さんのメールアドレスは' . ($personalInfos[0]['mail']) . 'で、電話番号は' . ($personalInfos[0]['tel']) . 'です。'."\r\n";
-    } elseif ($people['name'] == 'Bさん') {
-    echo '2番目の' . ($personalInfos[1]['name']) . 'さんのメールアドレスは' . ($personalInfos[1]['mail']) . 'で、電話番号は' . ($personalInfos[1]['tel']) . 'です。'."\r\n";
-    } elseif ($people['name'] == 'Cさん') {
-    echo '3番目の' . ($personalInfos[2]['name']) . 'さんのメールアドレスは' . ($personalInfos[2]['mail']) . 'で、電話番号は' . ($personalInfos[2]['tel']) . 'です。'."\r\n";
-    }
+foreach($personalInfos as $key => $people) {
+    echo  $key+1 . '番目の' . ($people['name']) . 'のメールアドレスは' . ($people['mail']) . 'で、電話番号は' . ($people['tel']) . 'です。'."\r\n";
   }
 ?>
 
@@ -86,13 +80,14 @@ foreach((array) $personalInfos as $people) {
 その際は、foreachを使用してください。
 追加ができたらvar_dumpを使用して配列の中身を確認してください。下記のようになっていたらOKです。
 
+
 <?php
 $personalInfos = [
   [
       'name' => 'Aさん',
       'mail' => 'aaa@mail.com',
       'tel'  => '09011112222'
-  ],
+  ], 
   [
       'name' => 'Bさん',
       'mail' => 'bbb@mail.com',
@@ -105,8 +100,9 @@ $personalInfos = [
   ],
 ];
 $ageList = [25, 30, 18];
-foreach($personalInfos as $key => &$Value) { //&$Valueにすることによって代入した数字が参照される 
-  $Value['age'] = $ageList[$key];
+foreach($personalInfos as $key => $Value) {
+    $Value['age'] = $ageList[$key];
+    $personalInfos[$key] = $Value;
 }
 var_dump($personalInfos);
 ?>
@@ -118,6 +114,7 @@ nameプロパティは任意の値を設定してください。
 「学籍番号120番の生徒は山田です。」
 
 <?php
+
 class Student
 {
     public $studentId;
@@ -131,11 +128,11 @@ class Student
 
     public function attend()
     {
-        echo '学籍番号' . $this->studentId . '番の生徒は' . $this->studentName . 'です。';
+        echo '授業に出席しました。';
     }
 }
 $yamada = new Student(120,'山田');
-$yamada->attend();
+echo '学籍番号' . $yamada->studentId. '番の生徒は' . $yamada->studentName . 'です。';
 ?>
 
 // Q4 オブジェクト-2
