@@ -87,7 +87,7 @@ $personalInfos = [
       'name' => 'Aさん',
       'mail' => 'aaa@mail.com',
       'tel'  => '09011112222'
-  ], 
+  ],
   [
       'name' => 'Bさん',
       'mail' => 'bbb@mail.com',
@@ -154,9 +154,9 @@ class Student
         $this->studentName = $name;
     }
 
-    public function attend($hikisuu) //引数を受け取る
+    public function attend($curriculum) //引数を受け取る
     {
-        echo $this->studentName . 'は' . $hikisuu . 'の授業に参加しました。学籍番号：' . $this->studentId;
+        echo $this->studentName . 'さんは' . $curriculum . 'の授業に参加しました。学籍番号：' . $this->studentId;
     }
 }
 $yamada = new Student(120, '山田');
@@ -192,7 +192,7 @@ echo "あの日から" . $diff->days . "日経過しました。";
 ?>
 
 
-//参考　よく使う日付の定義済みクラスには
+//memo:参考　よく使う日付の定義済みクラスには
 add(DateInterval $interval): DateTime
 format(string $format): string
 //上記2つらしい？

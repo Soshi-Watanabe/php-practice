@@ -2,7 +2,7 @@
 // Q1 変数と文字列
 <?php
 $name ='渡邊';
-echo '私の名前は「' .  $name . '」です。';
+echo '私の名前は「' . $name . '」です。';
 ?>
 
 // Q2 四則演算
@@ -22,25 +22,13 @@ echo '現在時刻は' . date("Y年m月d日 H時i分s秒",$currentTimestamp) . '
 ?>
 
 // Q4 条件分岐-1 if文
-<?php
-$device ='mac';
-if ($device == 'windows' || $device == 'mac') {
-    if($device == 'windows'){
-        echo '使用OSは' . $device . 'です。';
-    } else {
-        echo '使用OSは' . $device . 'です。';
-    }
-} else {
-  echo 'どちらでもありません。';
-}
-?>
 
 <?php
 $device ='mac';
-if ($device == 'windows' || $device == 'mac') {
+  if ($device == 'windows' || $device == 'mac') {
         echo '使用OSは' . $device . 'です。';
 } else {
-  echo 'どちらでもありません。';
+    echo 'どちらでもありません。';
 }
 ?>
 
@@ -53,7 +41,14 @@ echo $message;
 
 // Q6 配列
 <?php
-$kanto = ['東京','埼玉','神奈川','千葉','群馬','栃木','茨城'];
+$kanto = ['東京',
+          '埼玉',
+          '神奈川',
+          '千葉',
+          '群馬',
+          '栃木',
+          '茨城'
+         ];
 echo  ($kanto[2]) . 'と' . ($kanto[3]) . 'は関東地方の都道府県です。';
 ?>
 
@@ -68,7 +63,7 @@ $mati = [
         '群馬県' => '前橋市',
         '茨城県' => '水戸市'
         ];
-foreach ((array) $mati as $kenntyou ) {
+  foreach ((array) $mati as $kenntyou ) {
     echo $kenntyou."\r\n";
 }
 ?>
@@ -84,8 +79,8 @@ $mati = [
           '群馬県' => '前橋市',
           '茨城県' => '水戸市'
         ];
-foreach ($mati as $kenntyou => $value) {
-    if ($kenntyou == '埼玉県') 
+  foreach ($mati as $kenntyou => $value) {
+    if ($kenntyou == '埼玉県')
       echo $kenntyou . 'の県庁所在地は' . $value . 'です。';
 }
 ?>
@@ -103,8 +98,8 @@ $mati = [
           '北海道' => '札幌市',
           '沖縄県' => '那覇市'
         ];
-foreach ((array) $mati as $kenntyou => $value) {
-  if (
+  foreach ((array) $mati as $kenntyou => $value) {
+    if (
           $kenntyou == '東京都' ||
           $kenntyou == '神奈川県' ||
           $kenntyou == '千葉県' |
@@ -113,7 +108,7 @@ foreach ((array) $mati as $kenntyou => $value) {
           $kenntyou == '群馬県' ||
           $kenntyou == '茨城県'
           ) {
-    echo $kenntyou . 'の県庁所在地は' . $value . 'です。'."\r\n";
+      echo $kenntyou . 'の県庁所在地は' . $value . 'です。'."\r\n";
   } else {
       echo $kenntyou . 'は関東地方ではありません。'."\r\n";
   }
